@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    base(href='/')
+    script(src='jspm_packages/system.js')
+    script(src='config.js')
+    script(src='dist/js/app.head.js')
+    script.
+      System.import('src/js/head/app.js')
+    link(href='src/css/style.css', rel='stylesheet', type='text/css')
+    link(href='http://www.completelyfictional.com', rel='canonical', type='text/css')
+    title Completely Fictional
+  body(ng-app='completely-fictional')
+    .container
+      .header
+        a.image(href='/')
+          img(src='images/cf-header.jpg', title='', alt='cf-header', width='100%')
+      .column
+        p.nav-links
+          a(href='poetry') Poetry
+          a(href='essays') Essays
+          a(href='reviews') Reviews
+          a(href='trackback') Trackback
+          a(href='large-round-eyes') Large Round Eyes
+          a(href='extras') Extras
+      div(ui-view)
+      .footer-index(ng-controller='ndxCtrl as ndx')
+        p
+          a(href='go-away/please') &copy;
+          |  2010-
+          span(ng-bind='ndx.currentYear')
+          |  — 
+          a(href='/') Zack Schuster
+          | . All content licensed under 
+          a(rel='license', href='http://creativecommons.org/licenses/by-nc/3.0/us/') CC BY-NC 3.0
+        .socialmedia(style='margin-bottom:4.9em;')
+          a.smimg(href='http://medium.com/@ghostwhiteowl')
+            img(src='images/medium.jpeg', alt='', width='10%')
+          a.smimg(href='http://www.twitter.com/ghostwhiteowl')
+            img(src='images/twitter.png', alt='', width='10%')
+          a.smimg(href='http://somewhatnonfictional.com')
+            img(src='images/tumblr.png', alt='', width='10%')
+          a.smimg(href='http://www.flickr.com/photos/zackschuster/')
+            img(src='images/flickr.png', alt='', width='10%')
+    //
+      <script src="app.body.js"></script>
+      <script>
+      System.import('bundle.js')
+      </script>
