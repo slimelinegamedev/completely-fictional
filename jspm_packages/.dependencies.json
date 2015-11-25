@@ -53,5 +53,6 @@
   },
   "github:angular-ui/ui-router@0.2.15": {
     "angular": "jspm:angular@^1.3.2"
-  }
+  },
+  "npm:purecss@0.6.0": {}
 }
