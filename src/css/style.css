@@ -34,7 +34,7 @@ ul.padding > li { padding-bottom:1.5em; }
 a.extras { border-bottom: 0.1em solid #FFAAD3; }
 
 .container{width: 960px; overflow: hidden; position: relative; margin: 0 auto; padding-bottom: 2em;}
-.header {float: left; margin: 0 0 0.5em 0; border:none;}
+.header {float: left; border:none;}
 
 .content-image {width:23%; float:left; margin: 0 0.5em 0 0;}
 .content {width:67%; float: right; text-align:justify; padding: 2em 3em 4em 3em; margin: 0 0 0.5em 0; background:#fff;}
