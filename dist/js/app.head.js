@@ -84,7 +84,7 @@ System.register('src/js/head/app.router.js', [], function (_export) {
 
 		$urlRouterProvider.otherwise('/');
 
-		$locationProvider.html5Mode(true);
+		// $locationProvider.html5Mode(true);
 	}
 
 	return {
