@@ -64,6 +64,11 @@ System.register('src/js/head/app.router.js', [], function (_export) {
 		}).state('trackback', {
 			url: '/trackback',
 			templateUrl: 'dist/html/trackback.html'
+		}).state('trackbackChapter', {
+			url: '/trackback/:chapter',
+			templateUrl: function templateUrl($stateParams) {
+				return 'dist/html/' + $stateParams.chapter + '.html';
+			}
 		}).state('large-round-eyes', {
 			url: '/large-round-eyes',
 			templateUrl: 'dist/html/lre.html'

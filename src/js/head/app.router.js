@@ -54,10 +54,10 @@ export default function router($stateProvider, $urlRouterProvider, $locationProv
 			url: '/trackback',
 			templateUrl: 'dist/html/trackback.html'
 		})
-		.state('reviewName', {
+		.state('trackbackChapter', {
 			url: '/trackback/:chapter',			
 			templateUrl: function ($stateParams){
-				return `dist/html/${$stateParams.trackback}.html`;
+				return `dist/html/${$stateParams.chapter}.html`;
 			}
 		})
 		.state('large-round-eyes', {
