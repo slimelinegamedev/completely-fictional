@@ -18,12 +18,12 @@ html
           img(src='images/cf-header.jpg', title='', alt='cf-header', width='100%')
       .column
         p.nav-links
-          a(ui=sref='poetry()') Poetry
-          a(ui=sref='essays()') Essays
-          a(ui=sref='reviews()') Reviews
-          a(ui=sref='trackback()') Trackback
-          a(ui=sref='large-round-eyes()') Large Round Eyes
-          a(ui=sref='extras()') Extras
+          a(ui-sref="poetry") Poetry
+          a(ui-sref="essays") Essays
+          a(ui-sref="reviews") Reviews
+          a(ui-sref="trackback") Trackback
+          a(ui-sref="large-round-eyes") Large Round Eyes
+          a(ui-sref="extras") Extras
       div(ui-view)
       .footer-index(ng-controller='ndxCtrl as ndx')
         p
