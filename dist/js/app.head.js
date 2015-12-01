@@ -3,7 +3,7 @@ System.register("src/js/head/app.ctrl.js", [], function (_export) {
 
 	_export("default", ndxCtrl);
 
-	function ndxCtrl() {
+	function ndxCtrl($scope, $stateParams) {
 		this.currentYear = new Date().getFullYear();
 	}
 
@@ -23,12 +23,7 @@ System.register('src/js/head/app.router.js', [], function (_export) {
 			templateUrl: 'dist/html/home.html'
 		}).state('poetry', {
 			url: '/poetry',
-			templateUrl: 'dist/html/poetry.html'
-		}).state('poemName', {
-			url: '/poetry/:poem',
-			templateUrl: function templateUrl($stateParams) {
-				return 'dist/html/poetry/' + $stateParams.poem + '.html';
-			},
+			templateUrl: 'dist/html/poetry.html',
 			controller: function controller($scope) {
 				var num = undefined;
 				var pick = Math.random();
@@ -45,19 +40,29 @@ System.register('src/js/head/app.router.js', [], function (_export) {
 
 				$scope.random = num;
 			}
+		}).state('poetry.book', {
+			url: '/:name',
+			templateUrl: function templateUrl($stateParams) {
+				return 'dist/html/poetry/' + $stateParams.name + '.html';
+			}
+		}).state('poetry.name', {
+			url: '/:series/:number',
+			templateUrl: function templateUrl($stateParams) {
+				return 'dist/html/poetry/' + $stateParams.series + '/' + $stateParams.number + '.html';
+			}
 		}).state('essays', {
 			url: '/essays',
 			templateUrl: 'dist/html/essays.html'
-		}).state('essayName', {
-			url: '/essays/:essay',
+		}).state('essays.name', {
+			url: '/:essay',
 			templateUrl: function templateUrl($stateParams) {
 				return 'dist/html/essays/' + $stateParams.essay + '.html';
 			}
 		}).state('reviews', {
 			url: '/reviews',
 			templateUrl: 'dist/html/reviews.html'
-		}).state('reviewName', {
-			url: '/reviews/:review',
+		}).state('reviews.name', {
+			url: '/:review',
 			templateUrl: function templateUrl($stateParams) {
 				return 'dist/html/reviews/' + $stateParams.review + '.html';
 			}
@@ -75,7 +80,7 @@ System.register('src/js/head/app.router.js', [], function (_export) {
 		}).state('extras', {
 			url: '/extras',
 			templateUrl: 'dist/html/extras.html'
-		}).state('extraPlaces', {
+		}).state('extras.places', {
 			url: '/extras/:name',
 			templateUrl: function templateUrl($stateParams) {
 				return 'dist/html/extras/' + $stateParams.name + '.html';

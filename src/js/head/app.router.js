@@ -6,13 +6,7 @@ export default function router($stateProvider, $urlRouterProvider, $locationProv
 		})
 		.state('poetry', {
 			url: '/poetry',
-			templateUrl: 'dist/html/poetry.html'
-		})
-		.state('poemName', {
-			url: '/poetry/:poem',			
-			templateUrl: function ($stateParams){
-				return `dist/html/poetry/${$stateParams.poem}.html`;
-			},
+			templateUrl: 'dist/html/poetry.html',
 			controller: function ($scope){
 				let num;
 				const pick = Math.random();
@@ -30,12 +24,24 @@ export default function router($stateProvider, $urlRouterProvider, $locationProv
 				$scope.random = num;
 			}
 		})
+		.state('poetry.book', {
+			url: '/:name',			
+			templateUrl: function ($stateParams){
+				return `dist/html/poetry/${$stateParams.name}.html`;
+			}
+		})
+		.state('poetry.name', {
+			url: '/:series/:number',			
+			templateUrl: function ($stateParams){
+				return `dist/html/poetry/${$stateParams.series}/${$stateParams.number}.html`;
+			}
+		})
 		.state('essays', {
 			url: '/essays',			
 			templateUrl: 'dist/html/essays.html'
 		})
-		.state('essayName', {
-			url: '/essays/:essay',			
+		.state('essays.name', {
+			url: '/:essay',			
 			templateUrl: function ($stateParams){
 				return `dist/html/essays/${$stateParams.essay}.html`;
 			}
@@ -44,8 +50,8 @@ export default function router($stateProvider, $urlRouterProvider, $locationProv
 			url: '/reviews',
 			templateUrl: 'dist/html/reviews.html'
 		})
-		.state('reviewName', {
-			url: '/reviews/:review',			
+		.state('reviews.name', {
+			url: '/:review',			
 			templateUrl: function ($stateParams){
 				return `dist/html/reviews/${$stateParams.review}.html`;
 			}
@@ -68,7 +74,7 @@ export default function router($stateProvider, $urlRouterProvider, $locationProv
 			url: '/extras',
 			templateUrl: 'dist/html/extras.html'
 		})
-		.state('extraPlaces', {
+		.state('extras.places', {
 			url: '/extras/:name',		
 			templateUrl: function ($stateParams){
 				return `dist/html/extras/${$stateParams.name}.html`;

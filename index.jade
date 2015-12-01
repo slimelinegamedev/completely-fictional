@@ -11,7 +11,7 @@ html
     link(href='jspm_packages/npm/purecss@0.6/build/pure-min.css')
     link(href='http://www.completelyfictional.com', rel='canonical', type='text/css')
     title Completely Fictional
-  body(ng-app='completely-fictional')
+  body(ng-app='completely-fictional', ng-controller='ndxCtrl as ndx')
     .container
       .header
         a.image(ui-sref="home")
@@ -25,7 +25,7 @@ html
           a(ui-sref="large-round-eyes") Large Round Eyes
           a(ui-sref="extras") Extras
       div(ui-view)
-      .footer-index(ng-controller='ndxCtrl as ndx')
+      .footer-index
         p
           a(href='go-away/please') &copy;
           |  2010-

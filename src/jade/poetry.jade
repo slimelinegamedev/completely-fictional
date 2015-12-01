@@ -1,40 +1,44 @@
 .content-image
-  img(src='images/lights/lights-1.png', width='100%')
+  img(src='images/lights/lights-{{random}}.png', width='100%')
+
 .content
   h3(align='center') poetry collection, 2013: 
-    a(ui-sref="poemName({ poem: 'not-quite-a-colossus' })") not quite a colossus, not yet a champion
+    a(ui-sref="poetry.book({ name: 'not-quite-a-colossus' })") not quite a colossus, not yet a champion
+  
+.content
+  ui-view
     
   .nav
     p
     | Love: 
-    a(ui-sref="poemName({ poem: 'love-1' })") 1
-    a(ui-sref="poemName({ poem: 'love-2' })") 2
-    a(ui-sref="poemName({ poem: 'love-3' })") 3
-    a(ui-sref="poemName({ poem: 'love-4' })") 4
-    a(ui-sref="poemName({ poem: 'love-5' })") 5
-    a(ui-sref="poemName({ poem: 'love-6' })") 6
-    a(ui-sref="poemName({ poem: 'love-7' })") 7
+    a(ui-sref="poetry.name({ series: 'love', number: '1' })") 1
+    a(ui-sref="poetry.name({ series: 'love', number: '2' })") 2
+    a(ui-sref="poetry.name({ series: 'love', number: '3' })") 3
+    a(ui-sref="poetry.name({ series: 'love', number: '4' })") 4
+    a(ui-sref="poetry.name({ series: 'love', number: '5' })") 5
+    a(ui-sref="poetry.name({ series: 'love', number: '6' })") 6
+    a(ui-sref="poetry.name({ series: 'love', number: '7' })") 7
     p
     | I Am: 
-    a(ui-sref="poemName({ poem: 'i-am-1' })") 1
-    a(ui-sref="poemName({ poem: 'i-am-2' })") 2
-    a(ui-sref="poemName({ poem: 'i-am-3' })") 3
-    a(ui-sref="poemName({ poem: 'i-am-4' })") 4
-    a(ui-sref="poemName({ poem: 'i-am-5' })") 5
-    a(ui-sref="poemName({ poem: 'i-am-6' })") 6
+    a(ui-sref="poetry.name({ series: 'i-am', number: '1' })") 1
+    a(ui-sref="poetry.name({ series: 'i-am', number: '2' })") 2
+    a(ui-sref="poetry.name({ series: 'i-am', number: '3' })") 3
+    a(ui-sref="poetry.name({ series: 'i-am', number: '4' })") 4
+    a(ui-sref="poetry.name({ series: 'i-am', number: '5' })") 5
+    a(ui-sref="poetry.name({ series: 'i-am', number: '6' })") 6
     p
     | Plagiarised: 
-    a(ui-sref="poemName({ poem: 'plagiarised-1' })") 1
-    a(ui-sref="poemName({ poem: 'plagiarised-2' })") 2
-    a(ui-sref="poemName({ poem: 'plagiarised-3' })") 3
-    a(ui-sref="poemName({ poem: 'plagiarised-4' })") 4
-    a(ui-sref="poemName({ poem: 'plagiarised-5' })") 5
-    a(ui-sref="poemName({ poem: 'plagiarised-6' })") 6
-    a(ui-sref="poemName({ poem: 'plagiarised-7' })") 7
-    a(ui-sref="poemName({ poem: 'plagiarised-8' })") 8
-    a(ui-sref="poemName({ poem: 'plagiarised-9' })") 9
-    a(ui-sref="poemName({ poem: 'plagiarised-10' })") 10
-    a(ui-sref="poemName({ poem: 'plagiarised-11' })") 11
-    a(ui-sref="poemName({ poem: 'plagiarised-12' })") 12
-    a(ui-sref="poemName({ poem: 'plagiarised-13' })") 13
-    a(ui-sref="poemName({ poem: 'plagiarised-14' })") 14
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '1' })") 1
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '2' })") 2
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '3' })") 3
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '4' })") 4
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '5' })") 5
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '6' })") 6
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '7' })") 7
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '8' })") 8
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '9' })") 9
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '10' })") 10
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '11' })") 11
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '12' })") 12
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '13' })") 13
+    a(ui-sref="poetry.name({ series: 'plagiarised', number: '14' })") 14
