@@ -12,14 +12,11 @@ gulp.task('default', function(){
 
 gulp.task('build', ['html']);
 
-gulp.task('html', ['index'], function() {
-  return gulp.src('src/jade/**/*.jade')
-    .pipe(jade())
-    .pipe(gulp.dest('dist/html'))
-});
-
-gulp.task('index', function() {
-  return gulp.src('./index.jade')
+gulp.task('html', function() {
+  gulp.src('./index.jade')
     .pipe(jade())
     .pipe(gulp.dest('./'))
+  return gulp.src('src/jade/**/*.jade')
+    .pipe(jade())
+    .pipe(gulp.dest('dist/html'));
 });

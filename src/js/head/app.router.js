@@ -30,30 +30,36 @@ export default function router($stateProvider, $urlRouterProvider, $locationProv
 				return `dist/html/poetry/${$stateParams.name}.html`;
 			}
 		})
+		.state('poetry.poem', {
+			url: 'not-quite-a-colossus/:poem',			
+			templateUrl: function ($stateParams){
+				return `dist/html/poetry/${$stateParams.poem}.html`;
+			}
+		})
 		.state('poetry.name', {
 			url: '/:series/:number',			
 			templateUrl: function ($stateParams){
 				return `dist/html/poetry/${$stateParams.series}/${$stateParams.number}.html`;
 			}
 		})
-		.state('essays', {
+		.state('essaylist', {
 			url: '/essays',			
 			templateUrl: 'dist/html/essays.html'
 		})
-		.state('essays.name', {
-			url: '/:essay',			
+		.state('essay', {
+			url: '/essays/:name',			
 			templateUrl: function ($stateParams){
-				return `dist/html/essays/${$stateParams.essay}.html`;
+				return `dist/html/essays/${$stateParams.name}.html`;
 			}
 		})
-		.state('reviews', {
+		.state('reviewlist', {
 			url: '/reviews',
 			templateUrl: 'dist/html/reviews.html'
 		})
-		.state('reviews.name', {
-			url: '/:review',			
+		.state('review', {
+			url: '/reviews/:name',			
 			templateUrl: function ($stateParams){
-				return `dist/html/reviews/${$stateParams.review}.html`;
+				return `dist/html/reviews/${$stateParams.name}.html`;
 			}
 		})
 		.state('trackback', {
@@ -74,11 +80,9 @@ export default function router($stateProvider, $urlRouterProvider, $locationProv
 			url: '/extras',
 			templateUrl: 'dist/html/extras.html'
 		})
-		.state('extras.places', {
-			url: '/extras/:name',		
-			templateUrl: function ($stateParams){
-				return `dist/html/extras/${$stateParams.name}.html`;
-			}
+		.state('cool-places', {
+			url: 'extras/cool-places',		
+			templateUrl: `dist/html/extras/cool-places.html`
 		})
 		.state('goAway', {
 			url: '/go-away/:please',		
