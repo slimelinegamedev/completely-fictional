@@ -13568,7 +13568,8 @@ System.register('src/js/head/app.js', ['github:angular/bower-angular@1.4.7', 'gi
 			ndxCtrl = _srcJsHeadAppCtrlJs['default'];
 		}],
 		execute: function () {
-			_export('default', angular.module('completely-fictional', ['ui.router']).config(router).controller('ndxCtrl', ndxCtrl));
+
+			angular.module('completely-fictional', ['ui.router']).config(router).controller('ndxCtrl', ndxCtrl);
 		}
 	};
 });

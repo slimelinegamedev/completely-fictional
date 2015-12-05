@@ -2,21 +2,22 @@ var gulp = require('gulp');
 var jade = require('gulp-jade');
 
 var src = {
-  js: ['src/js/**/*.js', '!app.js'],
-  html: ['src/jade/**/*.jade', 'index.jade']
+  jade: ['src/jade/**/*.jade'],
+  index: ['src/jade/index.jade'],
+  states: ['src/jade/**/*.jade', '!src/jade/index.jade']
 };
 
 gulp.task('default', function(){
-  gulp.watch(src.html, { cwd: './' }, ['html']);
+  gulp.watch(src.jade, ['html']);
 });
 
 gulp.task('build', ['html']);
 
 gulp.task('html', function() {
-  gulp.src('./index.jade')
+  gulp.src(src.index)
     .pipe(jade())
     .pipe(gulp.dest('./'))
-  return gulp.src('src/jade/**/*.jade')
+  gulp.src(src.states)
     .pipe(jade())
     .pipe(gulp.dest('dist/html'));
 });

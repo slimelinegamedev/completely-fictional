@@ -2,12 +2,17 @@
   "name": "completely-fictional",
   "version": "1.0.0",
   "description": "The personal website of writer, photographer and programmer Zack Schuster.",
+  "repository": {
+    "url": "https://github.com/ledge23/completely-fictional"
+  },
   "main": "src/js/app.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.13.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run bundle && gulp build",
-    "bundle": "npm run bundle:head && npm run bundle:body",
+    "start": "npm run bundle & gulp build",
+    "bundle": "npm run bundle:head & npm run bundle:body",
     "bundle:head": "jspm bundle src/js/head/app dist/js/app.head.js",
     "bundle:body": "echo \"Body Bundle NYI\""
   },
