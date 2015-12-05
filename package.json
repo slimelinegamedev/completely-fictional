@@ -20,8 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-jade": "^1.1.0",
-    "gulp-ng-annotate": "^1.1.0"
+    "gulp-jade": "^1.1.0"
   },
   "jspm": {
     "dependencies": {
