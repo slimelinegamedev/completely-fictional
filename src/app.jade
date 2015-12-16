@@ -1,6 +1,6 @@
 template
   require(from='column.html')
-  require(from='footer-index.html')
+  require(from='footer-index')
   .container
     .header
       a.image(href='')
@@ -8,7 +8,6 @@ template
       
     column(router.bind='router')
     
-    .page-host
-      router-view
+    router-view
   
-    footer-index(router.bind='router')
+    footer-index
