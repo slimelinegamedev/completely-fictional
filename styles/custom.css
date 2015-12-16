@@ -11,7 +11,7 @@ img.caption{margin: 1em; padding: 1em; border: 0.1em solid #ddd;}
 blockquote{border-left: 0.1em solid #A5ABAB; margin: 0 0 0 0.5em; padding: 0 0.5em 0 0.5em;}
 
 p.nav-links { text-align: center; }
-p.nav-links > a { margin: 0 2.5em 0 2.5em; }
+p.nav-links span a { margin: 0 2.5em 0 2.5em; }
 a{color: #151515; text-decoration: none; border-bottom: 0.1em solid #FFAAD3;}
 a:hover{border-bottom: 0.1em solid #F52887;}
 
@@ -41,8 +41,8 @@ a.extras { border-bottom: 0.1em solid #FFAAD3; }
 .content {width:67%; float: right; text-align:justify; padding: 2em 3em 4em 3em; margin: 0 0 0.5em 0; background:#fff;}
 
 .column {float: left; width:100%; padding: 2em 0 2em 0; margin: 0 0 0.5em 0; background:#fff;}
-.column a{border-bottom: 0;}
-.column a:hover{border-bottom: 0.1em solid #F52887;}
+.column span a{border-bottom: 0;}
+.column span a:hover{border-bottom: 0.1em solid #F52887;}
 
 .nav {float: left; width:100%; text-align:center; padding: 2em 0 2em 0;}
 .nav a{border:none;padding:0 0.5em 0 0.5em;}
@@ -57,3 +57,74 @@ a.extras { border-bottom: 0.1em solid #FFAAD3; }
 .footer-index a:hover{border-bottom: 0.1em solid #666;}
 
 .socialmedia {margin: 0 auto; padding-top:3em;}
+
+/* aurelia-specific stuff */
+
+.splash {
+  text-align: center;
+  margin: 10% 0 0 0;
+  box-sizing: border-box;
+}
+
+.splash .message {
+  font-size: 72px;
+  line-height: 72px;
+  text-shadow: rgba(252, 252, 252, 0.5) 0 0 15px;
+  text-transform: uppercase;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.splash .fa-spinner {
+  text-align: center;
+  display: inline-block;
+  font-size: 72px;
+  margin-top: 50px;
+}
+
+
+/* animation definitions */
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
