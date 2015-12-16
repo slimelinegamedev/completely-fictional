@@ -4,6 +4,7 @@ var changed = require('gulp-changed');
 var plumber = require('gulp-plumber');
 var to5 = require('gulp-babel');
 var sourcemaps = require('gulp-sourcemaps');
+var jade = require('gulp-jade');
 var paths = require('../paths');
 var compilerOptions = require('../babel-options');
 var assign = Object.assign || require('object.assign');
@@ -21,6 +22,15 @@ gulp.task('build-system', function() {
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(to5(assign({}, compilerOptions, {modules: 'system'})))
     .pipe(sourcemaps.write({includeContent: true}))
+    .pipe(gulp.dest(paths.output));
+});
+
+// custom
+// copies changed jade files to the output directory
+gulp.task('build-jade', function() {
+  return gulp.src(paths.jade)
+    .pipe(changed(paths.output, {extension: '.jade'}))
+    .pipe(jade())
     .pipe(gulp.dest(paths.output));
 });
 
@@ -46,7 +56,7 @@ gulp.task('build-css', function() {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-system', 'build-html', 'build-css'],
+    ['build-system', 'build-jade', 'build-html', 'build-css'],
     callback
   );
 });

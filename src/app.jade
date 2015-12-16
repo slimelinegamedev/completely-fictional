@@ -1,0 +1,33 @@
+
+template
+  .container
+    .header
+      a.image(ui-sref='home')
+        img(src='images/cf-header.jpg', title='', alt='cf-header', width='100%')
+    .column
+      p.nav-links
+        span(repeat.for='row of router.navigation', class="${row.isActive ? 'active' : ''}")
+            a(href.bind='row.href') ${row.title}
+        // a(ui-sref='poetry') Poetry
+        // a(ui-sref='essaylist') Essays
+        // a(ui-sref='reviewlist') Reviews
+        // a(ui-sref='trackback') Trackback
+        // a(ui-sref='large-round-eyes') Large Round Eyes
+        // a(ui-sref='extras') Extras
+    .page-host
+      router-view
+    .footer-index
+      p
+        a(href='go-away/please') &copy;
+        span(ng-bind='ndx.currentYear')
+        a(ui-sref='home') Zack Schuster
+        a(rel='license', href='http://creativecommons.org/licenses/by-nc/3.0/us/') CC BY-NC 3.0
+      .socialmedia(style='margin-bottom:4.9em;')
+        a.smimg(href='http://medium.com/@ghostwhiteowl')
+          img(src='images/medium.jpeg', alt='', width='10%')
+        a.smimg(href='http://www.twitter.com/ghostwhiteowl')
+          img(src='images/twitter.png', alt='', width='10%')
+        a.smimg(href='http://somewhatnonfictional.com')
+          img(src='images/tumblr.png', alt='', width='10%')
+        a.smimg(href='http://www.flickr.com/photos/zackschuster/')
+          img(src='images/flickr.png', alt='', width='10%')
