@@ -1,0 +1,14 @@
+template
+  .content-image
+    img(src='${lights}', width='100%')
+  
+  .content-header
+    h3(align='center') poetry collection, 2013: 
+      a() not quite a colossus, not yet a champion
+    
+  .content
+    router-view(name='poem')
+
+    .nav
+      p(repeat.for='item of series') ${item.name} : 
+        a(repeat.for='id of series[$index].numbers' href='poetry/${item.href}/${id}') ${id} 
