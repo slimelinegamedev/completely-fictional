@@ -3,7 +3,7 @@ export default function ($stateProvider, $urlRouterProvider, $locationProvider) 
 	$stateProvider
 		.state('home', {
 			url: '/',
-			templateUrl: 'dist/html/home.html'
+			templateUrl: 'dist/html/home.html',
 		})
 		.state('poetry', {
 			url: '/poetry',
