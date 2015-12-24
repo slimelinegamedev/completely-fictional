@@ -1,7 +1,8 @@
 var gulp = require('gulp');
 var jade = require('gulp-jade');
-var annotate = require('gulp-ng-annotate');
 var babel = require('gulp-babel');
+var annotate = require('gulp-ng-annotate');
+var uglify = require('gulp-uglify');
 var paths = require('./paths');
 
 
@@ -28,5 +29,6 @@ gulp.task('js', function() {
       plugins: ['transform-es2015-modules-systemjs'],
 		}))
     .pipe(annotate())
+    .pipe(uglify())
     .pipe(gulp.dest(paths.jsOutput));
 });

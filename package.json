@@ -10,7 +10,6 @@
     "express": "^4.13.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp build && npm run bundle",
     "bundle": "jspm bundle dist/js/app.js dist/js/bundle.js --minify"
   },
@@ -21,7 +20,8 @@
     "gulp": "^3.9.0",
     "gulp-babel": "^6.1.1",
     "gulp-jade": "^1.1.0",
-    "gulp-ng-annotate": "^1.1.0"
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-uglify": "^1.5.1"
   },
   "jspm": {
     "dependencies": {

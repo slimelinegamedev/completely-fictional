@@ -1,17 +1,1 @@
-'use strict';
-
-System.register(['angular', 'angular-ui-router', './app.router.js', './app.ctrl.js'], function (_export) {
-	var angular, router, ndxCtrl;
-	return {
-		setters: [function (_angular) {
-			angular = _angular.default;
-		}, function (_angularUiRouter) {}, function (_appRouterJs) {
-			router = _appRouterJs.default;
-		}, function (_appCtrlJs) {
-			ndxCtrl = _appCtrlJs.default;
-		}],
-		execute: function () {
-			angular.module('completely-fictional', ['ui.router']).config(router).controller('ndxCtrl', ndxCtrl);
-		}
-	};
-});
+"use strict";System.register(["angular","angular-ui-router","./app.router.js","./app.ctrl.js","./header.component","./column.component","./footer.component"],function(n){var t,o,e,u,c,r;return{setters:[function(n){t=n["default"]},function(n){},function(n){o=n["default"]},function(n){e=n["default"]},function(n){u=n["default"]},function(n){c=n["default"]},function(n){r=n["default"]}],execute:function(){t.module("completely-fictional",["ui.router"]).config(o).controller("ndxCtrl",e).component("cfHeader",u).component("cfColumn",c).component("cfFooter",r)}}});
