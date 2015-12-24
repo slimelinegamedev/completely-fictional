@@ -11,7 +11,7 @@ img.caption{margin: 1em; padding: 1em; border: 0.1em solid #ddd;}
 blockquote{border-left: 0.1em solid #A5ABAB; margin: 0 0 0 0.5em; padding: 0 0.5em 0 0.5em;}
 
 p.nav-links { text-align: center; }
-p.nav-links > a { margin: 0 2.5em 0 2.5em; }
+p.nav-links > a { margin: 0 2em; }
 a{color: #151515; text-decoration: none; border-bottom: 0.1em solid #FFAAD3;}
 a:hover{border-bottom: 0.1em solid #F52887;}
 
