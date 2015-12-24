@@ -5,22 +5,23 @@
   "repository": {
     "url": "https://github.com/ledge23/completely-fictional"
   },
-  "main": "src/js/app.js",
+  "main": "dist/js/app.js",
   "dependencies": {
     "express": "^4.13.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run bundle & gulp build",
-    "bundle": "npm run bundle:head & npm run bundle:body",
-    "bundle:head": "jspm bundle src/js/head/app dist/js/app.head.js",
-    "bundle:body": "echo \"Body Bundle NYI\""
+    "start": "gulp build && npm run bundle",
+    "bundle": "jspm bundle dist/js/app.js dist/js/bundle.js --minify"
   },
   "author": "Zack Schuster",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "babel-plugin-transform-es2015-modules-systemjs": "^6.3.13",
     "gulp": "^3.9.0",
-    "gulp-jade": "^1.1.0"
+    "gulp-babel": "^6.1.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-ng-annotate": "^1.1.0"
   },
   "jspm": {
     "dependencies": {

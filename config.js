@@ -14,17 +14,14 @@ System.config({
   },
 
   map: {
-    "angular": "github:angular/bower-angular@1.5.0",
+    "angular": "github:angular/bower-angular@1.5.0-rc.0",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.15",
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "core-js": "npm:core-js@1.2.6",
     "skeleton": "github:dhg/Skeleton@2.0.4",
     "github:angular-ui/ui-router@0.2.15": {
-      "angular": "github:angular/bower-angular@1.4.7"
-    },
-    "github:angular/bower-angular-route@1.4.7": {
-      "angular": "github:angular/bower-angular@1.4.7"
+      "angular": "github:angular/bower-angular@1.5.0-rc.0"
     },
     "github:dhg/Skeleton@2.0.4": {
       "css": "github:systemjs/plugin-css@0.1.19",

@@ -1,4 +1,5 @@
-export default function router($stateProvider, $urlRouterProvider, $locationProvider) {
+export default function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  'ngInject';
 	$stateProvider
 		.state('home', {
 			url: '/',
