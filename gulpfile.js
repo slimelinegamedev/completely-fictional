@@ -1,34 +1,32 @@
 var gulp = require('gulp');
 var jade = require('gulp-jade');
+var concat = require('gulp-concat');
 var babel = require('gulp-babel');
-var annotate = require('gulp-ng-annotate');
 var uglify = require('gulp-uglify');
-var paths = require('./paths');
+
+var root = require('./build/paths').app;
+var dest = require('./build/paths').output;
+var tree = require('./build/paths').tree;
+var glob = require('./build/paths').glob;
 
 
-gulp.task('default', function(){
-  gulp.watch(paths.jade, ['html']);
-  gulp.watch(paths.js, ['js']);
+gulp.task('default', function () {
+  gulp.watch(tree.jade + glob.jade, { cwd: root }, ['html']);
+  gulp.watch(tree.js + glob.js, { cwd: root }, ['js']);
 });
 
 gulp.task('build', ['html', 'js']);
 
-gulp.task('html', function() {
-  gulp.src(paths.indexRoot)
+gulp.task('html', function () {
+  gulp.src(tree.jade + glob.jade, { cwd: root })
     .pipe(jade())
-    .pipe(gulp.dest(paths.root))
-  gulp.src(paths.statesRoot)
-    .pipe(jade())
-    .pipe(gulp.dest(paths.htmlOutput));
+    .pipe(gulp.dest(tree.html, { cwd: dest }));
 });
 
-gulp.task('js', function() {
-  gulp.src(paths.jsRoot)
-    .pipe(babel({
-			presets: ['es2015'],
-      plugins: ['transform-es2015-modules-systemjs'],
-		}))
-    .pipe(annotate())
+gulp.task('js', function () {
+  gulp.src(tree.js + glob.js, { cwd: root })
+    .pipe(concat('app.js'))
+    .pipe(babel())
     .pipe(uglify())
-    .pipe(gulp.dest(paths.jsOutput));
+    .pipe(gulp.dest(tree.js, { cwd: dest }));
 });
