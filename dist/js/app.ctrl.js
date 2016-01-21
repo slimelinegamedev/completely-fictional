@@ -1,1 +1,0 @@
-"use strict";System.register([],function(e){return e("default",function(){this.currentYear=(new Date).getFullYear()}),{setters:[],execute:function(){}}});
