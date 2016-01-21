@@ -19,22 +19,22 @@ const Poem = Vue.extend({
   },
   methods: {
     next(series, id) {
-      const intId = parseInt(id);
+      const intId = parseInt(id) + 1;
       switch (this.series) {
         case 'love':
-          if (intId < 6) this.showNext = true;
+          if (intId < 7) this.showNext = true;
           else this.showNext = false;
           break;
         case 'i-am':
-          if (intId < 5) this.showNext = true;
+          if (intId < 6) this.showNext = true;
           else this.showNext = false;
           break;
         case 'plagiarised':
-          if (intId < 13) this.showNext = true;
+          if (intId < 14) this.showNext = true;
           else this.showNext = false;
           break;
       }
-      router.go(`/poetry/${series}/${intId + 1}`);
+      router.go(`/poetry/${series}/${intId}`);
     }
   }
 });
