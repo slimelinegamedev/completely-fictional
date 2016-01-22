@@ -47,6 +47,7 @@ a.extras { border-bottom: 0.1em solid #FFAAD3; }
 .nav button, .nav span{cursor: pointer; border: none; background: none; padding:0 0.5em 0 0.5em;}
 .nav button:hover, .nav span:hover{text-decoration: overline;}
 .nav button:focus{outline: none;}
+.nav button:disabled{text-decoration: none;}
 
 .footer {float: left; width: 100%; color: #666; font-size: 0.8em; text-align:center; padding: 3em 0 0 0;}
 .footer a{color: #000; border-bottom: 0;}
