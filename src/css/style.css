@@ -43,8 +43,9 @@ a.extras { border-bottom: 0.1em solid #FFAAD3; }
 .column a{border-bottom: 0;}
 .column a:hover{border-bottom: 0.1em solid #F52887;}
 
-.nav {float: left; width:100%; text-align:center; padding: 2em 0 2em 0;}
-.nav button, .nav span{cursor: pointer; border: none; background: none; padding:0 0.5em 0 0.5em;}
+div.nav{padding: 2em 0; width:100%; text-align:center;}
+.nav button{font-size: 1.05em;}
+.nav button, .nav span{cursor: pointer; border: none; background: none; padding:0 0.5em;}
 .nav button:hover, .nav span:hover{text-decoration: overline;}
 .nav button:focus{outline: none;}
 .nav button:disabled{cursor: default; text-decoration: none;}
