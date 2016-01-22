@@ -10,8 +10,10 @@ const poetry = {
           poetry collection, 2013: <a v-link="'/poetry/not-quite-a-colossus'">not quite a colossus, not yet a champion</a>
         </h3>
       </div>
-      <div class="content">
+      <div class="content" v-if="$route.params.series">
         <router-view></router-view>
+      </div>
+      <div class="content">
         <div class="nav">
           <p>Love: <span class="poetry-nav" v-for="id in 7" @click="go('love', id + 1)">{{id + 1}}</span></p>
           <p>I Am: <span class="poetry-nav" v-for="id in 6" @click="go('i-am', id + 1)">{{id + 1}}</span></p>
