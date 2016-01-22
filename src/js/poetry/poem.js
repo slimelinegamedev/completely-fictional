@@ -3,8 +3,7 @@ const Poem = Vue.extend({
   template: `
     <div>
       <p>{{{poem}}}</p>
-      <br/>
-      <p class="nav">
+      <p class="nav" style="padding: 2em 0 0;text-align:center;">
         <button :disabled="showPrev" @click="prev($route.params.series, $route.params.id)">&laquo; previous</button>
         <button :disabled="showNext" @click="next($route.params.series, $route.params.id)">next &raquo;</button>
       </p>
@@ -34,7 +33,7 @@ const Poem = Vue.extend({
   },
   data() {
     return {
-      poem: "",
+      poem: "<br /><br /><br /><br /><br /><br /><br /><br /><br />",
       showNext: true,
       showPrev: false,
     }
