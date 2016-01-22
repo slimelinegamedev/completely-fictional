@@ -44,8 +44,9 @@ a.extras { border-bottom: 0.1em solid #FFAAD3; }
 .column a:hover{border-bottom: 0.1em solid #F52887;}
 
 .nav {float: left; width:100%; text-align:center; padding: 2em 0 2em 0;}
-.nav span{cursor: pointer; padding:0 0.5em 0 0.5em;}
-.nav span:hover{text-decoration: overline;}
+.nav button, .nav span{cursor: pointer; border: none; background: none; padding:0 0.5em 0 0.5em;}
+.nav button:hover, .nav span:hover{text-decoration: overline;}
+.nav button:focus{outline: none;}
 
 .footer {float: left; width: 100%; color: #666; font-size: 0.8em; text-align:center; padding: 3em 0 0 0;}
 .footer a{color: #000; border-bottom: 0;}
