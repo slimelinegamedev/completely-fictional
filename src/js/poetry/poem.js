@@ -1,40 +1,50 @@
 const Poem = Vue.extend({
-  params: ['showNext', 'showPrev'],
+  params: ['poem', 'next', 'showNext', 'prev', 'showPrev'],
   template: `
     <div>
-      <p>{{$route.params.series}} {{$route.params.id}}</p>
+      <p>{{{poem}}}</p>
       <br/>
-      <p class="nav" >
-        <span v-if="showNext" @click="next($route.params.series, $route.params.id)">next &raquo;</span></p>
-        <span v-if="showPrev" @click="prev($route.params.series, $route.params.id)">previous &laquo;</span></p>
+      <p class="nav">
+        <span v-if="showPrev" @click="prev($route.params.series, $route.params.id)">&laquo; previous</span>
+        <span v-if="showNext" @click="next($route.params.series, $route.params.id)">next &raquo;</span>
+      </p>
     </div>
   `,
+  route: {
+    activate() {
+      this.$parent.random = `images/lights/lights-${this.$parent.randomizer()}.png`
+      const id = parseInt(this.$route.params.id);
+      switch (this.$route.params.series) {
+        case 'love':
+          if (id < 7) this.showNext = true;
+          break;
+        case 'i-am':
+          if (id < 6) this.showNext = true;
+          break;
+        case 'plagiarised':
+          if (id < 14) this.showNext = true;
+          break;
+      }
+      if (id == 1) this.showPrev = false;
+      this.$http
+        .get(`data/poetry/${this.$route.params.series}/${this.$route.params.id}.json`)
+        .then(rsp => this.$set('poem', rsp.data));
+    },
+    canReuse: false,
+  },
   data() {
     return {
-      series: this.$route.params.series,
-      id: this.$route.params.id,
-      showNext: true,
-      showPrev: false,
+      poem: "",
+      showNext: false,
+      showPrev: true,
     }
   },
   methods: {
     next(series, id) {
-      const intId = parseInt(id) + 1;
-      switch (this.series) {
-        case 'love':
-          if (intId < 7) this.showNext = true;
-          else this.showNext = false;
-          break;
-        case 'i-am':
-          if (intId < 6) this.showNext = true;
-          else this.showNext = false;
-          break;
-        case 'plagiarised':
-          if (intId < 14) this.showNext = true;
-          else this.showNext = false;
-          break;
-      }
-      router.go(`/poetry/${series}/${intId}`);
+      router.go(`/poetry/${series}/${parseInt(id) + 1}`);
+    },
+    prev(series, id) {
+      router.go(`/poetry/${series}/${parseInt(id) - 1}`);
     }
   }
 });
