@@ -1,0 +1,48 @@
+{
+  "disallowKeywordsOnNewLine": [
+    "else", "function"
+  ],
+  "disallowKeywords": [
+    "with"
+  ],
+  "disallowMixedSpacesAndTabs": true,
+  "disallowMultipleLineStrings": true,
+  "disallowPaddingNewlinesInBlocks": true,
+  "disallowQuotedKeysInObjects": true,
+  "disallowSpaceAfterPrefixUnaryOperators": true,
+  "disallowSpaceBeforePostfixUnaryOperators": true,
+  "disallowSpacesInsideParentheses": true,
+  "disallowTrailingWhitespace": true,
+  "disallowYodaConditions": true,
+  "maximumLineLength": 120,
+  "requireCapitalizedConstructors": true,
+  "requireCommaBeforeLineBreak": true,
+  "requireCurlyBraces": [
+    "for",
+    "while",
+    "do",
+    "try",
+    "catch"
+  ],
+  "requireKeywordsOnNewLine": null,
+  "requireOperatorBeforeLineBreak": true,
+  "requireSpaceAfterBinaryOperators": null,
+  "requireSpaceAfterKeywords": [
+    "if",
+    "else",
+    "return",
+    "try",
+    "catch"
+  ],
+  "requireSpaceBeforeBinaryOperators": true,
+  "requireSpaceBeforeBlockStatements": true,
+  "requireSpaceBeforePostfixUnaryOperators": null,
+  "requireSpacesInConditionalExpression": true,
+  "requireSemicolons": true,
+  "requireSpacesInsideObjectBrackets": "all",
+  // "validateJSDoc": {
+  //   "checkParamNames": true,
+  //   "requireParamTypes": true
+  // },
+  "validateQuoteMarks": "'"
+}
