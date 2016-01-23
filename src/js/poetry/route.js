@@ -5,12 +5,12 @@ const poetry = {
       <div class="content-image">
         <img :src="random" width="100%"/>
       </div>
-      <div class="content-header" >
+      <div class="content-header">
         <h3 align="center">
           poetry collection, 2013: <a v-link="'/poetry/not-quite-a-colossus'">not quite a colossus, not yet a champion</a>
         </h3>
       </div>
-      <div class="content" v-if="$route.params">
+      <div class="content" v-if="this.$route.path !== '/poetry'">
         <router-view></router-view>
       </div>
       <div class="content">
@@ -24,7 +24,7 @@ const poetry = {
     data() {
       return {
         random: `images/lights/lights-${this.randomizer()}.png`
-      }
+      };
     },
     methods: {
       go(series, id) {
