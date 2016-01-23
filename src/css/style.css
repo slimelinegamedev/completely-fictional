@@ -44,7 +44,7 @@ a.extras { border-bottom: 0.1em solid #FFAAD3; }
 .column a:hover { border-bottom: 0.1em solid #F52887; }
 
 .nav { padding: 2em 0; text-align:center; }
-.nav button { font-size: 3em; color:#999 }
+.nav button { font-size: 3em; color:#bbb }
 .nav button, .nav span { cursor: pointer; border: none; background: none; padding:0 0.5em; }
 .nav span:hover { text-decoration: overline; }
 .nav button:focus { outline: none; }
