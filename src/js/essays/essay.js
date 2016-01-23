@@ -1,5 +1,5 @@
 const Essay = Vue.extend({
-  props: ['essay'],
+  props: [ 'essay' ],
   template: `
     <div class="content-image">
       <img :src="essay.image" width="100%"/>
@@ -11,7 +11,7 @@ const Essay = Vue.extend({
   `,
   data() {
     return {
-      essay: this.$http.get(`data/essays/${this.$route.params.title}.json`).then(rsp => this.essay = rsp.data)
-    }
+      essay: this.$http.get(`data/essays/${this.$route.params.title}.json`).then(rsp => this.essay = rsp.data),
+    };
   }
 });

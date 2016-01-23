@@ -7,7 +7,7 @@ Vue.component('cf-navigation', {
     </div>
   `,
   data() {
-    return { 
+    return {
       nav: [
         { name: 'Poetry', link: '/poetry' },
         { name: 'Essays', link: '/essays' },

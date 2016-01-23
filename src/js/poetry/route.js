@@ -1,6 +1,6 @@
 const poetry = {
   component: Vue.extend({
-    props: ['random'],
+    props: [ 'random' ],
     template: `
       <div class="content-image">
         <img :src="random" width="100%"/>
@@ -10,7 +10,7 @@ const poetry = {
           poetry collection, 2013: <a v-link="'/poetry/not-quite-a-colossus'">not quite a colossus, not yet a champion</a>
         </h3>
       </div>
-      <div class="content" v-if="$route.params.series">
+      <div class="content" v-if="$route.params">
         <router-view></router-view>
       </div>
       <div class="content">
@@ -28,7 +28,7 @@ const poetry = {
     },
     methods: {
       go(series, id) {
-        this.random = `images/lights/lights-${this.randomizer()}.png`
+        this.random = `images/lights/lights-${this.randomizer()}.png`;
         router.go(`/poetry/${series}/${id}`);
       },
       randomizer() {
