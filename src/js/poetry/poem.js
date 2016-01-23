@@ -1,13 +1,25 @@
 const Poem = Vue.extend({
-  params: ['poem', 'next', 'showNext', 'prev', 'showPrev'],
+  params: [ 'poem', 'showPoem', 'next', 'showNext', 'prev', 'showPrev' ],
   template: `
-    <div>
-      <p>{{{poem}}}</p>
-      <p class="nav" style="padding: 2em 0 0;text-align:center;">
-        <button :disabled="showPrev" @click="prev($route.params.series, $route.params.id)">&laquo; previous</button>
-        <button :disabled="showNext" @click="next($route.params.series, $route.params.id)">next &raquo;</button>
-      </p>
-    </div>
+      <div style="position:relative;">
+        <div style="float:left;width:4%;margin:10em 4.5em 0 -2em;">
+          <p class="nav">
+            <button :disabled="showPrev" @click="prev($route.params.series, $route.params.id)">
+              &laquo;
+            </button>
+          </p>
+        </div>
+        <div style="float:left;min-height:400px;max-height:1000px;width:70%">
+          <p style="padding 2em 0 0 2em;" v-show="showPoem" class="animated-poem" transition="fade">{{{poem}}}</p>
+        </div>
+        <div style="float:left;width:4%;margin:10em 0 0 5em;">
+          <p class="nav">
+            <button :disabled="showNext" @click="next($route.params.series, $route.params.id)">
+              &raquo;
+            </button>
+          </p>
+        </div>
+      </div>
   `,
   route: {
     activate() {
@@ -27,13 +39,20 @@ const Poem = Vue.extend({
       if (id == 1) this.showPrev = true;
       this.$http
         .get(`data/poetry/${this.$route.params.series}/${this.$route.params.id}.json`)
-        .then(rsp => this.$set('poem', rsp.data));
+        .then(rsp => {
+          this.$set('poem', rsp.data);
+          this.showPoem = true;
+        });
+    },
+    canDeactivate(transition) {
+      this.showPoem = false;
+      setTimeout(transition.next, 800);
     },
     canReuse: false,
   },
   data() {
     return {
-      poem: "<br /><br /><br /><br /><br /><br /><br /><br /><br />",
+      showPoem: false,
       showNext: true,
       showPrev: false,
     }
@@ -44,6 +63,11 @@ const Poem = Vue.extend({
     },
     prev(series, id) {
       router.go(`/poetry/${series}/${parseInt(id) - 1}`);
-    }
+    },
   }
+});
+
+Vue.transition('fade', {
+  enterClass: 'fadeIn',
+  leaveClass: 'fadeOut',
 });
