@@ -1,4 +1,4 @@
-const Essay = Vue.extend({
+const essay = Vue.extend({
   props: [ 'essay' ],
   template: `
     <div class="content-image">

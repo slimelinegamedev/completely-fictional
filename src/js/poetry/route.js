@@ -1,4 +1,4 @@
-const poetry = {
+const Poetry = {
   component: Vue.extend({
     props: [ 'random' ],
     template: `

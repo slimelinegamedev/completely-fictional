@@ -1,4 +1,4 @@
-const EssayList = Vue.extend({
+const essayList = Vue.extend({
   template: `
     <div class="content-image">
       <img src="images/essays/cf-sidebar-essays.jpg" width="100%"/>

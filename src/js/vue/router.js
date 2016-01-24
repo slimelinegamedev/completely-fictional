@@ -27,7 +27,7 @@ router.map({
   }
 });
 
-router.on('/essays', essays);
-router.on('/poetry', poetry);
+router.on('/essays', Essays);
+router.on('/poetry', Poetry);
 
 router.start(App, '#app');

@@ -1,14 +1,14 @@
-const essays = {
+const Essays = {
   name: 'essays',
   component: Vue.extend({
     template: `<router-view></router-view>`,
   }),
   subRoutes: {
     '/': {
-      component: EssayList,
+      component: essayList,
     },
     '/:title': {
-      component: Essay,
+      component: essay,
     },
   },
 };
