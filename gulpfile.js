@@ -24,9 +24,9 @@ gulp.task('html', function () {
 });
 
 gulp.task('js', function () {
-  gulp.src(tree.js + glob.js, { cwd: root })
+  gulp.src(glob.js, { cwd: tree.js })
     .pipe(concat('app.js'))
     .pipe(babel())
     .pipe(uglify())
-    .pipe(gulp.dest(tree.js, { cwd: dest }));
+    .pipe(gulp.dest('scripts'));
 });
