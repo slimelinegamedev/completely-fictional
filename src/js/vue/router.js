@@ -30,5 +30,7 @@ router.map({
 router.on('/essays', Essays);
 router.on('/poetry', Poetry);
 router.on('/reviews', Reviews);
+router.on('/trackback', Trackback);
+router.on('/large-round-eyes', LargeRoundEyes);
 
 router.start(App, '#app');
