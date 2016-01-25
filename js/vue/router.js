@@ -32,5 +32,6 @@ router.on('/poetry', Poetry);
 router.on('/reviews', Reviews);
 router.on('/trackback', Trackback);
 router.on('/large-round-eyes', LargeRoundEyes);
+router.on('/extras', Extras);
 
 router.start(App, '#app');
