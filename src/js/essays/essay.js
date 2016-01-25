@@ -5,7 +5,9 @@ const essay = Vue.extend({
       <img :src="essay.image" width="100%"/>
     </div>
     <div class="content">
-      <h2>{{essay.title}}</h2>
+      <div style="text-align:center;margin:2em 0 3em;">
+        <h2>{{essay.title}}</h2>
+      </div>
       {{{essay.text}}}
     </div>
   `,
