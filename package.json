@@ -7,7 +7,7 @@
     "url": "https://github.com/ledge23/completely-fictional"
   },
   "scripts": {
-    "postinstall": "gulp"
+    "start": "node gulpfile.js"
   },
   "author": "Zack Schuster",
   "license": "MIT",

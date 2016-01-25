@@ -10,3 +10,5 @@ gulp.task('default', function () {
     .pipe(uglify())
     .pipe(gulp.dest('scripts'));
 });
+
+gulp.start('default');
