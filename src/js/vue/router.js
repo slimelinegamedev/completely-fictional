@@ -29,5 +29,6 @@ router.map({
 
 router.on('/essays', Essays);
 router.on('/poetry', Poetry);
+router.on('/reviews', Reviews);
 
 router.start(App, '#app');
