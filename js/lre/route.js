@@ -17,6 +17,7 @@ const LargeRoundEyes = {
           <p>Tristan Newcomb, who is a friend of mine and the head of the excellent <a href="http://lumalin.com/">LUMALIN Productions</a>, offered to review the collection, and I said yes, as long as he was honest. I don't believe he was.</p>
           <p>"[B]ecause this is the "reality" of childhood, as opposed to the 'Stand By Me' style of engineered childhood nostalgia, you'll be looking on with disbelief as you're reminded how fiercely aloof children can actually be — possibly in order to accept and endure such a lack of control in their own lives? It becomes a little disquieting at times, but never drifts into that "artificial childhood" of hindsight that most writers employ — and therefore feels more authentic than other offerings in this genre."</p>
           <p>Yeah, no, that was way, <em>way</em> too nice.</p>
-      </div>`,
+      </div>
+    `,
   }),
 };
