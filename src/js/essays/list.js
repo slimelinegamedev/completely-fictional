@@ -6,7 +6,7 @@ const essayList = Vue.extend({
     <div class="content">
       <ul class="padding">
         <li v-for="essay in essayList">
-          <a v-link='essay.link'>
+          <a :href='essay.link'>
             {{essay.title}}
           </a>
         </li>
@@ -17,21 +17,21 @@ const essayList = Vue.extend({
     return {
       essayList: [
         {
-          link:'essays/tree-of-life',
+          link:'#/essays/tree-of-life',
           title: `We are all branches on the tree of life: an essay exploring 
                   meaning in 'The Tree of Life'`
         },
         {
-          link:'essays/internet-poetry',
+          link:'#/essays/internet-poetry',
           title: `A minor and insignificant treatise on Internet Poetry,
                   and the disparity between presence and person therein.`,
         },
         {
-          link:'essays/lana-del-rey',
+          link:'#/essays/lana-del-rey',
           title: `Feminism, Image Obsession and Lana Del Rey, 'Born to Die'.`,
         },
         {
-          link:'essays/max-payne-3',
+          link:'#/essays/max-payne-3',
           title: `Max Payne 3, neo-noir, style and difficulty`,
         },
         {
