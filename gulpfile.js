@@ -5,7 +5,7 @@ gulp.task('default', function () {
   autobundler({
     source: 'js',
     moduleDir: 'modules',
-    destination: 'scripts',
+    destination: 'app',
   });
 });
 
