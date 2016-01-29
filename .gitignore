@@ -2,7 +2,6 @@ app/
 dist/
 docs/
 node_modules/
-scripts/
 
 system.js
 system.js.map
