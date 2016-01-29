@@ -1,3 +1,0 @@
-const Colossus = Vue.extend({
-  template: `<p><img src="/images/colossus_champion-cover.png" alt="" title="" width="100%"/></p><p> <!-- em poetry collection, 2013-->it is ok to fail. obsession with failure turns you into a bitter and shortsighted fool for whom any happiness is a harbinger of darkness to come</p><p>so relax</p><p style="padding-bottom:33px;">(yes i am trying to convince myself of this as well)</p><p> <a v-link="'/poetry/not-quite-a-colossus/not-yet-a-champion'">read a poem</a></p><p><a href="http://gum.co/dfhT" class="gumroad-button">buy it</a><script type="text/javascript" src="https://gumroad.com/js/gumroad.js"></script></p>`
-});
