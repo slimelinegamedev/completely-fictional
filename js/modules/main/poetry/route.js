@@ -32,7 +32,7 @@ export default {
     methods: {
       go(series, id) {
         this.random = `images/lights/lights-${this.randomizer()}.png`;
-        this.router.go(`/poetry/${series}/${id}`);
+        this.$router.go(`/poetry/${series}/${id}`);
       },
       randomizer() {
         const pick = Math.random();
