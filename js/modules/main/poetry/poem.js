@@ -1,5 +1,4 @@
 export default {
-  params: [ 'poem', 'showPoem', 'next', 'showNext', 'prev', 'showPrev' ],
   template: `
       <div style="position:relative;">
         <div style="float:left;width:4%;margin:10em 4.5em 0 -2em;">
@@ -40,7 +39,7 @@ export default {
       this.$http
         .get(`data/poetry/${this.$route.params.series}/${this.$route.params.id}.json`)
         .then(rsp => {
-          this.$set('poem', rsp.data);
+          this.poem = rsp.data;
           this.showPoem = true;
         });
     },
@@ -52,6 +51,7 @@ export default {
   },
   data() {
     return {
+      poem: '<div style="height:400px"></div>',
       showPoem: false,
       showNext: true,
       showPrev: false,
@@ -59,10 +59,10 @@ export default {
   },
   methods: {
     next(series, id) {
-      router.go(`/poetry/${series}/${parseInt(id) + 1}`);
+      this.$router.go(`/poetry/${series}/${parseInt(id) + 1}`);
     },
     prev(series, id) {
-      router.go(`/poetry/${series}/${parseInt(id) - 1}`);
+      this.$router.go(`/poetry/${series}/${parseInt(id) - 1}`);
     },
   }
 };
