@@ -17,7 +17,7 @@ export default {
         <li>I made a <a href="http://fuckyeahjdawinslow.tumblr.com" class="extras">shrine</a> to JDA Winslow. Stand in awe.</li>
       </ul>
       <h1 style="padding-top:2em;">Here's a bit more about me, Zack Schuster</h1>
-      <p>I'm a 24-year-old dude from The Midwest who sometimes moonlights as a dead prussian general. My greatest accomplishment to date is failing miserably at doing a Kickstarter.</p>
+      <p>I'm a {{age}}-year-old dude from The Midwest who sometimes moonlights as a dead prussian general. My greatest accomplishment to date is failing miserably at doing a Kickstarter.</p>
       <p>Fun fact: I used to be in the Army National Guard, specifically a <a href="http://www.goarmy.com/careers-and-jobs/browse-career-and-job-categories/arts-and-media/public-affairs-specialist.html">public affairs specialist</a>.</p>
       <p>When I was in training for my Army job, one of my instructors said that inside every novelist is a cheap philosopher. It's true. (Also, this next paragraph has a lot of 'I's in it.)</p>
       <p>I like writing all kinds of things, especially stories and essays. I'm very conversational and self-deprecating; I like making people smile, and I try to say familiar things in new ways. I try to be positive a lot, but a lot of times I get really angry instead because there are a lot of awful things in the world and it's impossible for me to fix even a small portion of them. As a result, I try to end everything I write with either "Everything will be alright" or "I hope you have a wonderful life," because it makes me smile and I hope it'll make you smile too.</p>
@@ -25,4 +25,13 @@ export default {
       <p>*<a>smiles</a> for the non-existent <a>camera</a>*</p>
     </div>
   `,
+  data() {
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = d.getMonth();
+    const day = d.getDate();
+    return {
+      age: (month < 6 || month === 6 && day < 12) ? year - 1991 : year - 1990,
+    };
+  },
 };
