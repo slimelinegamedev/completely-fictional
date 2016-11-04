@@ -1,6 +1,6 @@
 export default {
   name: 'largeroundeyes',
-  component: Vue.extend({
+  component: {
     template: `
       <div class="content-image">
         <img src="images/lrecover.png" width="100%" />
@@ -19,5 +19,5 @@ export default {
           <p>Yeah, no, that was way, <em>way</em> too nice.</p>
       </div>
     `,
-  }),
+  },
 };

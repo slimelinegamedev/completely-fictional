@@ -1,9 +1,9 @@
-import poem from 'app:poetry/poem';
-import champion from 'app:poetry/champion';
-import colossus from 'app:poetry/colossus';
+import poem from './poem';
+import champion from './champion';
+import colossus from './colossus';
 
 export default {
-  component: Vue.extend({
+  component: {
     template: `
       <div class="content-image">
         <img :src="random" width="100%"/>
@@ -41,16 +41,16 @@ export default {
             pick < 0.75 ? 3 : 4;
       }
     }
-  }),
+  },
   subRoutes: {
     '/:series/:id': {
-      component: Vue.extend(poem),
+      component: poem,
     },
     '/not-quite-a-colossus': {
-      component: Vue.extend(colossus),
+      component: colossus,
     },
     '/not-quite-a-colossus/not-yet-a-champion': {
-      component: Vue.extend(champion),
+      component: champion,
     }
   },
 };

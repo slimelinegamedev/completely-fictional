@@ -30,8 +30,9 @@ export default {
     const year = d.getFullYear();
     const month = d.getMonth();
     const day = d.getDate();
+    let birthYear = 1990;
     return {
-      age: (month < 6 || month === 6 && day < 12) ? year - 1991 : year - 1990,
+      age: (month < 6 || month === 6 && day < 12) ? year - --birthYear : year - birthYear,
     };
   },
 };

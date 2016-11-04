@@ -1,4 +1,4 @@
- export default {
+export default {
   template: `
     <div class="footer-index">
       <p>
